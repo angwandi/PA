@@ -3,35 +3,67 @@ package com.company;
 import java.util.Scanner;
 
 public class Main {
+    final static Scanner scanner = new Scanner(System.in); // Do not change this line
 
     public static void main(String[] args) {
-        // write your code here
-        var scanner = new Scanner(System.in);
-        System.out.println("Hello! My name is 2ms.");
-        System.out.println("I was created in 2019.");
+        greet("2ms Aid", "2019"); // change it as you need
+        remindName();
+        guessAge();
+        count();
+        test();
+        end();
+
+    }
+
+    static void greet(String assistantName, String birthYear) {
+        System.out.println("Hello! My name is " + assistantName + ".");
+        System.out.println("I was created in " + birthYear + ".");
         System.out.println("Please, remind me your name.");
+    }
 
-        // reading a name
-        var yourName = scanner.next();
+    static void remindName() {
+        String name = scanner.nextLine();
+        System.out.println("What a great name you have, " + name + "!");
+    }
 
-        System.out.println("What a great name you have, " + yourName + "!");
+    static void guessAge() {
         System.out.println("Let me guess your age.");
-        System.out.println("Enter remainders of dividing your age by 3, 5 and 7.");
-        int reminder3 = scanner.nextInt();
-        int reminder5 = scanner.nextInt();
-        int reminder7 = scanner.nextInt();
-        // reading all remainders
-        int age = ((reminder3 % 3) * 70 + (reminder5 % 5) * 21 + (reminder7 % 7) * 15) % 105;
-
+        System.out.println("Say me remainders of dividing your age by 3, 5 and 7.");
+        int rem3 = scanner.nextInt();
+        int rem5 = scanner.nextInt();
+        int rem7 = scanner.nextInt();
+        int age = (rem3 * 70 + rem5 * 21 + rem7 * 15) % 105;
         System.out.println("Your age is " + age + "; that's a good time to start programming!");
-        System.out.println("Now I will prove to you that I can count to any number you want.");
-        int numberToBeCountedTo = scanner.nextInt();
-        int counter = -1;
-        while (counter < numberToBeCountedTo) {
-            counter++;
-            System.out.println(counter + "!");
-        }
+    }
 
-        System.out.println("Completed, have a nice day!");
+    static void count() {
+        System.out.println("Now I will prove to you that I can count to any number you want.");
+        int num = scanner.nextInt();
+        for (int i = 0; i <= num; i++) {
+            System.out.printf("%d!\n", i);
+        }
+    }
+
+    static void test() {
+        System.out.println("Let's test your programming knowledge.");
+        String question = "Why do we use methods?\n"
+                + "1. To repeat a statement multiple times." +
+                "\n2. To decompose a program into several small subroutines." +
+                "\n3. To determine the execution time of a program." +
+                "\n4. To interrupt the execution of a program.";
+        System.out.println(question);
+        int answer;
+        do {
+            answer = scanner.nextInt();
+            if (answer != 2) {
+                System.out.println("please try again");
+            }
+        } while (answer != 2);
+
+    }
+
+    static void end() {
+        System.out.println("Congratulations, have a nice day!"); // Do not change this text
     }
 }
+
