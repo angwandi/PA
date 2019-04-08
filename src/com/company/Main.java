@@ -21,8 +21,17 @@ public class Main {
         int reminder5 = scanner.nextInt();
         int reminder7 = scanner.nextInt();
         // reading all remainders
-       int age = ((reminder3 % 3) * 70 + (reminder5 % 5) * 21 + (reminder7 % 7) * 15) % 105;
+        int age = ((reminder3 % 3) * 70 + (reminder5 % 5) * 21 + (reminder7 % 7) * 15) % 105;
 
         System.out.println("Your age is " + age + "; that's a good time to start programming!");
+        System.out.println("Now I will prove to you that I can count to any number you want.");
+        int numberToBeCountedTo = scanner.nextInt();
+        int counter = -1;
+        while (counter < numberToBeCountedTo) {
+            counter++;
+            System.out.println(counter + "!");
+        }
+
+        System.out.println("Completed, have a nice day!");
     }
 }
